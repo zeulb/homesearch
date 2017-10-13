@@ -1,0 +1,10 @@
+{
+  "name": "homesearch-server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.15.2"
+  }
+}
