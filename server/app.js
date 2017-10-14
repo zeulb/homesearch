@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express();
 
-app.use('/homes', require('./routes/homes'));
+app.use('/api/homes', require('./routes/homes'));
 
 // error handler
 app.use(function(err, req, res, next) {
