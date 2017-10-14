@@ -12,6 +12,15 @@ class HomeColumns extends Component {
     currentPage: 0,
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // Reset current page when filter changes.
+    if (this.props.homes !== prevProps.homes) {
+      this.setState({
+        currentPage: 0
+      });
+    }
+  }
+
   renderNoResult() {
     return (
       <Section>
