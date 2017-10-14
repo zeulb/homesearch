@@ -20,11 +20,19 @@ class Root extends Component {
       });
   }
 
+  renderContent() {
+    if (this.state.isLoading) {
+      return null;
+    } else {
+      return <HomeColumns homes={this.state.homes}/>;
+    }
+  }
+
   render() {
     return (
       <App>
         <SearchHeader />
-        <HomeColumns homes={this.state.homes}/>
+        {this.renderContent()}
       </App>
     );
   }
