@@ -10,7 +10,13 @@ class SearchHeader extends Component {
       <Header fixed={true} size='large'>
         <Title>Homesearch</Title>
         <HomeIcon />
-        <Search placeHolder='Search address...' fill={true} responsive={true} inline={true}/>
+        <Search
+          placeHolder='Search address...'
+          fill={true}
+          responsive={true}
+          inline={true}
+          onDOMChange={this.props.onSearchTextChange}
+        />
       </Header>
     );
   }
