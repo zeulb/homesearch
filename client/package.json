@@ -2,6 +2,7 @@
   "name": "homesearch-client",
   "version": "0.0.1",
   "dependencies": {
+    "grommet": "^1.8.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"

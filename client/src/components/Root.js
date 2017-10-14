@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import App from 'grommet/components/App';
+import SearchHeader from './SearchHeader';
 
 class Root extends Component {
   state = {
@@ -19,9 +21,10 @@ class Root extends Component {
 
   render() {
     return (
-      <div>
+      <App>
+        <SearchHeader />
         {this.state.homes.map(home => <span>{home.address}</span>)}
-      </div>
+      </App>
     );
   }
 }
