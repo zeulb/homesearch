@@ -26,7 +26,7 @@ class HomeCard extends Component {
       <Heading
         tag='h3'
         strong={true}>
-        {this.props.address}
+        {this.props.address || '-'}
       </Heading>
     );
   }
