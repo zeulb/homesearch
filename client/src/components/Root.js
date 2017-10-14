@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import App from 'grommet/components/App';
 import SearchHeader from './SearchHeader';
+import HomeColumns from './HomeColumns';
 
 class Root extends Component {
   state = {
@@ -23,7 +24,7 @@ class Root extends Component {
     return (
       <App>
         <SearchHeader />
-        {this.state.homes.map(home => <span>{home.address}</span>)}
+        <HomeColumns homes={this.state.homes}/>
       </App>
     );
   }
