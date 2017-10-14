@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "csv-parse": "^1.2.4",
+    "embedly": "^2.1.0",
     "express": "~4.15.2",
     "request": "^2.83.0"
   }

@@ -1,6 +1,8 @@
-var fs = require('fs'); 
-var csvParse = require('csv-parse');
+const fs = require('fs');
+const request = require('request');
+const csvParse = require('csv-parse');
 const dataPath = 'data/redfin.csv';
+const embedlyConfig = require('../config/embedly.json');
 
 const csvFieldMap = {
   'SALE TYPE': 'sale_type',
@@ -54,6 +56,18 @@ fs.createReadStream(dataPath)
         const field = csvFieldMap[csvField];
         home[field] = data[csvField];
       });
+
+    // Extract metadata of the redfin url.
+    request({
+      url: embedlyConfig['ENDPOINT'],
+      qs: {
+        key: embedlyConfig['API_KEY'],
+        url: home.url
+      }
+    }, function(error, response, body) {
+      if (error) { console.log(error); return; }
+      home.metadata = JSON.parse(body);
+    });
 
     homes.addHome(home);       
   });
