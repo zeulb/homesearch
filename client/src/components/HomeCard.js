@@ -5,6 +5,7 @@ import ListItem from 'grommet/components/ListItem';
 import Heading from 'grommet/components/Heading';
 import Anchor from 'grommet/components/Anchor';
 import './HomeCard.css';
+import UnavailableImage from '../assets/unavailable-image.png';
 
 const currencyFormatter = require('currency-formatter');
 
@@ -59,7 +60,7 @@ class HomeCard extends Component {
     if (this.props.metadata.images.length) {
       return this.props.metadata.images[0].url;
     } else {
-      return null;
+      return UnavailableImage;
     }
   }
 
