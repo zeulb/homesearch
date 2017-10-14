@@ -55,12 +55,23 @@ class HomeCard extends Component {
     );
   }
 
+  getThumbnailUrl() {
+    if (this.props.metadata.images.length) {
+      return this.props.metadata.images[0].url;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <Card
+        className="HomeCard"
+        contentPad={'small'}
         label={this.renderPrice()}
         heading={this.renderAddress()}
         description={this.renderInformation()}
+        thumbnail={this.getThumbnailUrl()}
         link={this.renderAnchor()}
       />
     );
